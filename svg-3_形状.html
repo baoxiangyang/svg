@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>svg入门——形状</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		svg {
+			overflow: visible;
+			height: 250px;
+		}
+	</style>
+</head>
+<body>
+	<pre>
+		rect 矩形
+		circle 圆形
+		ellipse 椭圆
+		line 线
+		polyline 折线
+		polygon 多边形
+		path 路径
+
+		style 定义css属性
+		fill 填充颜色
+		stroke-width 边框的宽
+		stroke 边框的颜色
+		x,y 矩形的左侧,顶端位置
+		fill-opacity  填充透明度
+		stroke-opacity 边框透明度
+		opacity 元素的透明
+		rx,ry 矩形产生圆角。
+	</pre>
+	<p>矩形</p>
+	<svg height="200px" xmlns="http://www.w3.org/2000/svg" version="1.1">
+		<rect x="50" y="10" width="300" height="200" rx="20" ry="20"
+			style="fill:rgb(0,0,255);opacity:0.5;fill-opacity:0.7;stroke-opacity:0.8;stroke-width:5;stroke:rgb(0,0,0)"/>
+	</svg>
+	<p>圆形</p>
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+		<circle cx="50" cy="50" r="40" stroke="green" stroke-width="2" fill="red" />
+	</svg>
+	<p>椭圆</p>
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+		<ellipse cx="300" cy="80" rx="100" ry="50" style="fill:yellow;stroke: purple;stroke-width:2;"/>
+	</svg>
+	<p>椭圆嵌套</p>
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+	  <ellipse cx="240" cy="100" rx="220" ry="30" style="fill:purple"/>
+	  <ellipse cx="220" cy="70" rx="190" ry="20" style="fill:lime"/>
+	  <ellipse cx="210" cy="45" rx="170" ry="15" style="fill:yellow"/>
+	</svg>
+	<br />
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+	  <ellipse cx="240" cy="50" rx="220" ry="30" style="fill:yellow"/>
+	  <ellipse cx="220" cy="50" rx="190" ry="20" style="fill:white"/>
+	</svg>
+	<p>直线</p>
+	<pre>
+		x1  x 轴开始
+		y1  y 轴开始
+		x2  x 轴结束
+		y2  y 轴结束
+	</pre>	
+	<svg height="250px" xmlns="http://www.w3.org/2000/svg" version="1.1">
+	  <line x1="0" y1="0" x2="200" y2="200" style="stroke:rgb(255,0,0);stroke-width:2"/>
+	</svg>
+	<p>多边形</p>
+	<pre>
+		points 每个多边形的x,y坐标
+	</pre>
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+	  <polygon points="200,10 250,190 160,210" style="fill: lime;stroke: purple;stroke-width:2"/>
+	</svg>
+	<br>
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+  		<polygon points="100,10 40,180 190,60 10,60 160,180"
+  		style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+	</svg>
+	<p>曲线</p>
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+	  	<polyline points="20,20 40,25 60,40 80,120 120,140 200,180"
+  			style="fill:none;stroke:black;stroke-width:3" />
+	</svg>
+	<p>path 路径</p>
+	<pre>
+		M = moveto
+		L = lineto
+		H = horizontal lineto
+		V = vertical lineto
+		C = curveto
+		S = smooth curveto
+		Q = quadratic Bézier curve
+		T = smooth quadratic Bézier curveto
+		A = elliptical Arc
+		Z = closepath
+	</pre>	
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+	  <path d="M150 0 L75 200 L225 200 Z" />
+	</svg>
+	<br >
+	<svg style="height: 500px" xmlns="http://www.w3.org/2000/svg" version="1.1">
+	  <path id="lineAB" d="M 100 350 l 150 -300" stroke="red"
+	  stroke-width="3" fill="none" />
+	  <path id="lineBC" d="M 250 50 l 150 300" stroke="red"
+	  stroke-width="3" fill="none" />
+	  <path d="M 175 200 l 150 0" stroke="green" stroke-width="3"
+	  fill="none" />
+	  <path d="M 100 350 q 150 -300 300 0" stroke="blue"
+	  stroke-width="5" fill="none" />
+	  <!-- Mark relevant points -->
+	  <g stroke="black" stroke-width="3" fill="black">
+	    <circle id="pointA" cx="100" cy="350" r="3" />
+	    <circle id="pointB" cx="250" cy="50" r="3" />
+	    <circle id="pointC" cx="400" cy="350" r="3" />
+	  </g>
+	  <!-- Label the points -->
+	  <g font-size="30" font="sans-serif" fill="black" stroke="none"
+	  text-anchor="middle">
+	    <text x="100" y="350" dx="-30">A</text>
+	    <text x="250" y="50" dy="-10">B</text>
+	    <text x="400" y="350" dx="30">C</text>
+	  </g>
+	</svg>
+	<p>文本</p>
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+	  <text x="0" y="15" fill="red" transform="rotate(30 20,40)">I love SVG</text>
+	</svg>
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink">
+	   <defs>
+	    <path id="path1" d="M75,20 a1,1 0 0,0 100,0" />
+	  </defs>
+	  <text x="10" y="100" style="fill:red;">
+	    <textPath xlink:href="#path1">I love SVG I love SVG</textPath>
+	  </text>
+	</svg>
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+	  <text x="10" y="20" style="fill:red;">Several lines:
+	    <tspan x="10" y="45">First line</tspan>
+	    <tspan x="10" y="70">Second line</tspan>
+	  </text>
+	</svg>
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink">
+	 <a xlink:href="https://www.baidu.com" target="_blank">
+	    <text x="0" y="15" fill="red">SVG 超链接</text>
+	  </a>
+	</svg>
+	<p>Stroke 属性</p>
+	<pre>
+		stroke-linecap 不同类型的开放路径的终结;troke-dasharray 创建虚线
+	</pre>
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+	  <g fill="none" stroke="black" stroke-width="4">
+	  	<path stroke-width="6" d="M5 80 l215 0" />
+	    <path stroke-dasharray="5,5" d="M5 20 l215 0" />
+	    <path stroke-dasharray="10,10" d="M5 40 l215 0" />
+	    <path stroke-dasharray="20,10,5,5,5,10" d="M5 60 l215 0" />
+	    <path stroke-linecap="round" d="M5 100 l215 0" />
+	  </g>
+	</svg>
+</body>
+</html>

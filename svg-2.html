@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>svg 入门2-引入svg</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<p>embed引入svg</p>
+	<pre>
+		优势：所有主要浏览器都支持，并允许使用脚本
+		缺点：不推荐在HTML4和XHTML中使用（但在HTML5允许）
+	</pre>
+	<embed src="test.svg" type="image/svg+xml" />
+	<p>object引入svg</p>
+	<pre>
+		优势：所有主要浏览器都支持，并支持HTML4，XHTML和HTML5标准
+		缺点：不允许使用脚本。
+	</pre>
+	<object data="test.svg" type="image/svg+xml"></object>
+	<p>iframe引入svg</p>
+	<pre>
+		优势：所有主要浏览器都支持，并允许使用脚本
+		缺点：不推荐在HTML4和XHTML中使用（但在HTML5允许）
+	</pre>
+	<iframe src="test.svg"></iframe>
+	<p>直接在html中嵌套svg</p>
+	<pre>
+		在Firefox、Internet Explorer9、谷歌Chrome和Safari中，你可以直接在HTML嵌入SVG代码。
+		注意：SVG不能直接嵌入到Opera。
+	</pre>		
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+	  <circle cx="100" cy="50" r="40" stroke="black"
+	  stroke-width="2" fill="red"/>
+	</svg>
+	<p>a标签链接到一个SVG文件</p>
+	<a href="test.svg">链接到svg</a>
+</svg>
+</body>
+</html>
